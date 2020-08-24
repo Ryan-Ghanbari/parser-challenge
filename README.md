@@ -41,4 +41,4 @@ docker load parser_image.tar.gz
 docker run -e input_file="data.txt" -e output_file="output_csv_file.csv" -v ${PWD} parser_image:1.0
 ```
 
-by: Ryan Ghanbari, 2020-08-20
+by: Ryan Ghanbari, 2020-08-24
