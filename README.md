@@ -5,6 +5,15 @@ delimited file, e.g. CSV format.
 
 ## Example to run
 
+```bash
+python parser.py <input_file> <output_file>
+```
+
+```bash
+python parser.py "./testData/data.txt" "./testData/parsed_data.csv"
+```
+
+## Get access to Parser class, read, parse, and write functions
 ```python
 P = Parser()
 data = P.read_data('./testData/data.txt')
@@ -18,9 +27,6 @@ P.write_data('./testData/parsed_data.csv')
 pytest test_parser.py
 ```
 
-by: Ryan Ghanbari, 2020-08-20
-
-
 ## Building Docker Image
 
 ```bash
@@ -31,5 +37,8 @@ docker save parser_image:1.0 | gzip > parser_image.tar.gz
 ## Running Docker container using input and output files parameters
 
 ```bash
+docker load parser_image.tar.gz
 docker run -e input_file="data.txt" -e output_file="output_csv_file.csv" -v ${PWD} parser_image:1.0
 ```
+
+by: Ryan Ghanbari, 2020-08-20
